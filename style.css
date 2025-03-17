@@ -87,6 +87,7 @@ body {
   background-color: var(--grey-700);
   text-align: center;
   padding: 0.75rem 0;
+  border-radius: 8px;
 }
 
 .btn:hover {
@@ -115,6 +116,15 @@ body {
   height: 88px;
   border-radius: 50%;
   /* margin-bottom: var(--spacing-md); */
+}
+
+.bio {
+  font-style: normal;
+  text-align: center;
+}
+
+.city {
+  color: var(--accent);
 }
 
 .links {
