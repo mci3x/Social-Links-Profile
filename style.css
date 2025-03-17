@@ -1,0 +1,125 @@
+/********************************/
+/* Cheatsheet :D */
+/********************************/
+
+/*  4px = 0.25rem
+    12px = 0.75rem
+    14px = 0.875rem
+    16px = 1rem
+    20px = 1.25rem
+    24px = 1.5rem
+    32px = 2rem
+    45px = 2.813rem
+    304px = 19rem
+    327px = 20.438rem
+    384px = 24rem
+    501px = 31.313rem
+    522px = 32.625rem
+    611px = 38.188rem
+    704px = 44rem
+    1440px = 90rem
+    1920px = 120rem
+*/
+
+/********************************/
+/* General */
+/********************************/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: white;
+  background-color: var(--grey-900);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/********************************/
+/* Custom properties */
+/********************************/
+
+:root {
+  --accent: hsl(75, 94%, 57%);
+  --grey-700: hsl(0, 0%, 20%);
+  --grey-800: hsl(0, 0%, 12%);
+  --grey-900: hsl(0, 0%, 8%);
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2.5rem;
+}
+
+/********************************/
+/* Reusable components */
+/********************************/
+.text-preset-1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.text-preset-2 {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.text-preset-2b {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+}
+
+.btn {
+  width: 19rem;
+  height: 2.813rem;
+  background-color: var(--grey-700);
+  text-align: center;
+  padding: 0.75rem 0;
+}
+
+.btn:hover {
+  background-color: var(--accent);
+}
+
+/********************************/
+/* Elements */
+/********************************/
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  border-radius: 12px;
+  background-color: var(--grey-800);
+  width: 24rem;
+  height: 38.188rem;
+}
+
+.avatar {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  /* margin-bottom: var(--spacing-md); */
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: var(--spacing-sm);
+}
