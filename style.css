@@ -1,31 +1,4 @@
 /********************************/
-/* Cheatsheet :D */
-/********************************/
-
-/*  4px = 0.25rem
-    12px = 0.75rem
-    14px = 0.875rem
-    16px = 1rem
-    20px = 1.25rem
-    24px = 1.5rem
-    32px = 2rem
-    40px = 2.5rem
-    45px = 2.813rem
-    279px = 17.438rem
-    304px = 19rem
-    327px = 20.438rem =
-    384px = 24rem
-    501px = 31.313rem
-    522px = 32.625rem
-    579px = 36.188rem
-    611px = 38.188rem
-    704px = 44rem
-    1400px = 87.5rem
-    1440px = 90rem
-    1920px = 120rem
-*/
-
-/********************************/
 /* General */
 /********************************/
 
@@ -33,18 +6,26 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  align-items: center;
+  line-height: 1.5;
+  text-align: center;
 }
 
 body {
-  font-family: "Inter", sans-serif;
-  color: white;
-  background-color: var(--grey-900);
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
   gap: 0;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  font-size: 0.875rem;
+  color: white;
+  background-color: var(--grey-900);
   padding: clamp(var(--s-md), 6.4%, var(--s-lg));
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 /********************************/
@@ -52,7 +33,7 @@ body {
 /********************************/
 
 :root {
-  --accent: hsl(75, 94%, 57%);
+  --accent: hsl(205, 100%, 51%);
   --grey-700: hsl(0, 0%, 20%);
   --grey-800: hsl(0, 0%, 12%);
   --grey-900: hsl(0, 0%, 8%);
@@ -60,54 +41,38 @@ body {
   --s-sm: 1rem;
   --s-md: 1.5rem; /* 24px */
   --s-lg: 2.5rem; /* 40px */
+  /* Font */
+  --w-1: 400;
+  --w-2: 600;
+  --w-3: 700;
 }
 
 /********************************/
 /* Reusable components */
 /********************************/
-.text-preset-1 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 1.5;
-}
-
-.text-preset-2 {
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: 1.5;
-}
-
-.text-preset-2b {
-  font-size: 0.875rem;
-  font-weight: 700;
-  line-height: 1.5;
-}
-
-/* .btn {
-} */
 
 .btn:link,
 .btn:visited {
   text-decoration: none;
   color: white;
-  /* max-width: 17.438rem; */
   max-width: 19rem;
   width: 100%;
-  /* above were moved */
   background-color: var(--grey-700);
-  text-align: center;
   padding: 0.75rem 0;
   border-radius: 8px;
   height: 2.813rem;
-  transition: all 350ms;
+  transition: color 450ms, background-color 450ms;
 }
 
 .btn:hover,
-.btn:active,
-.btn:focus-visible {
+.btn:active {
   background-color: var(--accent);
   color: var(--grey-800);
-  outline: none;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
 }
 
 /********************************/
@@ -117,40 +82,41 @@ body {
 .card {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
   gap: var(--s-md);
   border-radius: 12px;
   background-color: var(--grey-800);
-  /* max-width: 20.438rem;
-  width: 100%; */
   width: clamp(20.438rem, 87.2vw, 24rem);
   height: clamp(36.188rem, 63.65vh, 38.188rem);
-  /* max-height: 36.188rem; */
   padding: clamp(var(--s-md), 6.4%, var(--s-lg));
 }
 
 .avatar {
   width: 88px;
   height: 88px;
+  border: 2px solid var(--grey-900);
   border-radius: 50%;
+  box-shadow: 5px 5px 15px var(--grey-900),
+    -5px -5px 15px rgba(39, 39, 39, 0.623);
 }
 
-.bio {
-  text-align: center;
+.about {
+  font-size: var(--w-1);
 }
 
 .city {
   color: var(--accent);
+  font-weight: var(--w-3);
 }
 
 .links {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   list-style: none;
-  align-items: center;
   gap: var(--s-sm);
   width: 100%;
+  font-weight: var(--w-3);
   overflow: auto;
 }
 
@@ -162,33 +128,6 @@ body {
 @media (max-width: 44rem) {
   body {
     padding: 0 clamp(var(--s-md), 6.4%, var(--s-lg));
-  }
-}
-
-/* @media (max-width: 355px) {
-  .btn:link,
-  .btn:visited {
-    height: min(2.813rem, 8vw);
-    padding: 1rem auto;
-    font-size: clamp(0.4rem, 70%, 0.875rem);
-  }
-
-  .about {
-    font-size: clamp(0.4rem, 70%, 0.875rem);
-  }
-} */
-
-/* Above 704px */
-@media (min-width: 44rem) {
-  /* body {
-    padding: var(--s-lg);
-  } */
-
-  .card {
-    /* padding: var(--s-lg); */
-    /* max-width: 24rem;
-    width: 100%; */
-    /* max-height: 38.188rem; */
   }
 }
 
